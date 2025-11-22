@@ -1,0 +1,423 @@
+:root {
+    
+    --primary-color: #8B0000; 
+    --secondary-color: #001122; 
+    --white: #ffffff;
+    --bg-color: #001f3f; 
+    --text-color: #f0f0f0; 
+    --font-title: 'Montserrat', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-header {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 60px 20px;
+    text-align: center;
+    border-bottom: 5px solid var(--primary-color);
+}
+
+.main-header h1 {
+    font-family: var(--font-title);
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.main-header .subtitle {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-top: 10px;
+    color: #ddd;
+}
+
+.logo {
+    max-width: 150px;
+    margin-bottom: 15px;
+}
+
+.main-nav {
+    background-color: var(--secondary-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.main-nav a {
+    display: block;
+    padding: 15px 20px;
+    color: var(--white);
+    text-decoration: none;
+    font-family: var(--font-title);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+}
+
+.main-nav a:hover {
+    background-color: var(--primary-color);
+}
+
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+    flex: 1;
+}
+
+.intro h2 {
+    font-family: var(--font-title);
+    color: var(--primary-color);
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    border-left: 5px solid var(--secondary-color);
+    padding-left: 15px;
+}
+
+.content-box {
+    background: #002a55; 
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5); 
+    border-top: 3px solid var(--primary-color);
+    color: var(--white); 
+}
+
+.lead {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.featured-image {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.featured-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+}
+
+.featured-image figcaption {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: #777;
+    font-style: italic;
+}
+
+.main-footer {
+    background-color: var(--secondary-color);
+    color: #bbb;
+    text-align: center;
+    padding-top: 40px;
+    margin-top: auto;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding-bottom: 30px;
+}
+
+.uniube-logo img {
+    filter: brightness(0) invert(1);
+    max-width: 180px;
+}
+
+.main-footer a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.copyright {
+    background-color: #000;
+    padding: 15px;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .main-header h1 {
+        font-size: 2rem;
+    }
+    .main-nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+    .main-nav a {
+        border-bottom: 1px solid #333;
+        padding: 12px;
+    }
+}
+
+.content-box h3 {
+    font-family: var(--font-title);
+    color: var(--accent-color); 
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #444; 
+    padding-bottom: 5px;
+}
+
+
+.featured-image img {
+    max-width: 100%; 
+    height: auto;    
+    border: 2px solid var(--white); 
+}
+
+/* =========================================
+   7. ESTILO DA LINHA DO TEMPO (NOVO)
+   ========================================= */
+.timeline {
+    list-style: none;
+    padding-left: 20px;
+    border-left: 4px solid var(--primary-color); /* Linha vermelha vertical */
+    margin-left: 10px;
+}
+
+.timeline-item {
+    margin-bottom: 40px;
+    position: relative;
+    padding-left: 20px;
+}
+
+/* A bolinha que marca o ano na linha */
+.timeline-item::before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    background-color: var(--accent-color); /* Dourado */
+    border: 3px solid var(--bg-color); /* Borda da cor do fundo para destacar */
+    border-radius: 50%;
+    position: absolute;
+    left: -30px; /* Posiciona em cima da linha */
+    top: 5px;
+}
+
+.timeline-year {
+    font-family: var(--font-title);
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    font-weight: 900;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.timeline-content p {
+    margin-bottom: 15px;
+}
+
+.timeline {
+    list-style: none;
+    padding-left: 20px;
+    border-left: 4px solid var(--primary-color); 
+    margin-left: 10px;
+}
+
+.timeline-item {
+    margin-bottom: 40px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.timeline-item::before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    background-color: var(--accent-color); 
+    border: 3px solid var(--bg-color); 
+    border-radius: 50%;
+    position: absolute;
+    left: -30px; 
+    top: 5px;
+}
+
+.timeline-year {
+    font-family: var(--font-title);
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    font-weight: 900;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.timeline-content p {
+    margin-bottom: 15px;
+}
+
+.timeline-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.models-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.model-card {
+    background-color: #002a55; 
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+    border: 1px solid #333;
+}
+
+.model-card:hover {
+    transform: translateY(-10px); 
+    border-color: var(--accent-color);
+}
+
+.model-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; 
+    border-bottom: 4px solid var(--primary-color);
+}
+
+.model-info {
+    padding: 20px;
+    color: var(--white);
+}
+
+.model-info h3 {
+    font-family: var(--font-title);
+    color: var(--accent-color);
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.model-info p {
+    font-size: 0.95rem;
+    color: #ddd;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 8px;
+    border: 2px solid var(--white);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+    filter: brightness(1.1);
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: 600;
+    color: var(--accent-color);
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid #444;
+    border-radius: 5px;
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: 1rem;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+button[type="submit"] {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+    background-color: #a00000;
+    transform: translateY(-2px);
+}
+
+.contact-links {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+    text-align: center;
+}
+
+.contact-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+.contact-links a:hover {
+    color: var(--primary-color);
+}
